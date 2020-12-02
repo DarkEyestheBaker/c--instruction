@@ -21,14 +21,16 @@ namespace ch03_proj_3_2_Travel_Time_Calculator
 
 				Console.WriteLine("Estimated travel time: ");
 				Console.WriteLine("______________________");
-				double d1 = miles / speed;
-				var timeInMinutes = TimeSpan.FromMinutes(d1);
+				int hours = (int)((int)miles / speed);
+				int min = (int)((miles / speed) * 60 % 60);
+				/*var timeInMinutes = TimeSpan.FromMinutes(d1);
 				var timeInHours = TimeSpan.FromHours(d1);
 				int hh = timeInHours.Hours;
 				int mm = timeInMinutes.Minutes;
+				*/
 				Console.WriteLine();
-				Console.WriteLine("Hours: " + hh);
-				Console.WriteLine("Minutes: " + mm);
+				Console.WriteLine("Hours: " + hours);
+				Console.WriteLine("Minutes: " + min);
 				Console.WriteLine();
 				Console.Write("Continue?  (y/n) ");
 				choice = Console.ReadLine();
