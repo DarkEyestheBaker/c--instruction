@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ch04-proj-Factoral Calculator", "ch04-proj-Factoral Calculator\ch04-proj-Factoral Calculator.csproj", "{BF362C83-6908-40F3-8CB1-360C896B4564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF362C83-6908-40F3-8CB1-360C896B4564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF362C83-6908-40F3-8CB1-360C896B4564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF362C83-6908-40F3-8CB1-360C896B4564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF362C83-6908-40F3-8CB1-360C896B4564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DBDC7BC-32D2-4E88-ACF1-057973C6DAB1}
+	EndGlobalSection
+EndGlobal
