@@ -14,16 +14,24 @@ namespace ch05_Methods
 			int n = GetInt("Enter a whole number: ");
 			Console.WriteLine("You entered the number: " + n);
 
-			int age = GetInt("Enter actor's age: ");
+			/*int age = GetInt("Enter actor's age: ");
 			Console.WriteLine("Actor's age is: " + age);
-
+			*/
 			Console.WriteLine("Bye!");
-
 		}
-
 		private static int GetInt(String prompt) {
-			Console.Write(prompt);
-			int n = int.Parse(Console.ReadLine());
+			int n = 0;
+			Boolean success = false;
+			while (!success) {
+				Console.Write(prompt);
+				try {
+					n = int.Parse(Console.ReadLine());
+					success = true;
+				}
+				catch (Exception e) {
+					Console.WriteLine("Invalid entry.  Not a whole number. Please try again.");
+				}
+			}
 			return n;
 		}
 	}
