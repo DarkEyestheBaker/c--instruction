@@ -15,7 +15,7 @@ namespace ch12_prj_Wizard_Inventory
 	{
 		Console.WriteLine("Welcome, Wizard, to your Wizard Inventory!");
 
-		List<String> inventory = new ArrayList<>();
+		List<string> inventory = new List<string>();
 		inventory.add("wooden staff");
 		inventory.add("wizard hat");
 		inventory.add("cloth shoes");
@@ -23,23 +23,23 @@ namespace ch12_prj_Wizard_Inventory
 		Console.WriteLine();
 		bool done = false;
 		String command = "go";
-		while (!command.EqualsIgnoreCase("exit"))
+		while (!command.Equals("exit"))
 		{
 			command = Console.ReadLine.("Command:  ");
-			Console.WriteLine.println();
+			Console.WriteLine();
 			switch (command)
 			{
 				case "show":
-					showInventory(inventory);
+					inventory.show(inventory);
 					break;
 				case "grab":
-					addItemToInventory(inventory);
+					inventory.add(inventory);
 					break;
 				case "edit":
-					editInventory(inventory);
+					inventory.edit(inventory);
 					break;
 				case "drop":
-					dropItemFromInventory(inventory);
+					inventory.drop(inventory);
 					break;
 				case "exit":
 					done = true;
@@ -55,9 +55,8 @@ namespace ch12_prj_Wizard_Inventory
 	}
 	// Print lines - no input needed
 	String command;
-	private static void printWelcomeMessage()
+	private static void DisplayMenu() {
 	{
-		
 		Console.WriteLine("Welcome, adventurers, to the Wizard Inventory Game!");
 		Console.WriteLine();
 		Console.WriteLine("COMMAND MENU: ");
@@ -68,10 +67,10 @@ namespace ch12_prj_Wizard_Inventory
 		Console.WriteLine("exit - Exit program");
 		Console.WriteLine();
 	}
-	private static void showInventory(List<String> inventory)
+	private static void ShowInventory(List<String> inventory)
 	{
 		//		int oneBasedIndex = 1;
-		for (String item : inventory)
+		foreach (String item : inventory)
 		{
 			Console.WriteLine(inventory.indexOf(item) + 1 + ".  " + item);
 			//			oneBasedIndex++;
@@ -80,18 +79,18 @@ namespace ch12_prj_Wizard_Inventory
 
 	private static void addItemToInventory(List<String> inventory)
 	{
-		private static boolean addItemToInventory(List<String> inventory)
-		{
-			if (inventory.size() > MAX_INVENTORY_SIZE)
-			{
-				Console.WriteLine("You are overburdened.  Drop one item.");
-				return;
-				Console.WriteLine("You are overburdened.  Leave one item behind.");
-				return false;
-			}
-			String newItem = Console.getString("Name:  ");
-			inventory.add(newItem);
-			Console.WriteLine(newItem + " was added.");
 
-			return true;
+		if (inventory.size() > MAX_INVENTORY_SIZE)
+		{
+			Console.WriteLine("You are overburdened.  Drop one item.");
+			return;
+			Console.WriteLine("You are overburdened.  Leave one item behind.");
+			return false;
 		}
+		String newItem = Console.Write("Name:  " + newItem);
+		inventory.add(newItem);
+		Console.WriteLine(newItem + " was added.");
+
+		return true;
+	}
+}
