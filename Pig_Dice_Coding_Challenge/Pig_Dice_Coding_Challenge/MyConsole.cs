@@ -2,114 +2,107 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ch07_Prj_Mgr.Business
+namespace ch07_product_manager.util
 {
 	class MyConsole
-	{
-        public static String getLine(String prompt)
         {
-            Console.Write(prompt);
-            String s = sc.nextLine();        // read the whole line
-            return s;
-        }
-
-        public static String getString(String prompt)
-        {
-            Console.Write(prompt);
-            String s = sc.next();        // read the first string on the line
-        
-            return s;
-        }
-
-        public static int getInt(String prompt)
-        {
-            int i = 0;
-            bool isValid = false;
-            while (!isValid)
+            public static String getString(String prompt)
             {
                 Console.Write(prompt);
-                try {
-                    i = Int32.Parse(Console.ReadLine());
-                    isValid = true;
-                }
-               catch (Exception e) 
-
-                {
-                    Console.Write("Error! Invalid integer value. Try again.");
-                }
+                String s = Console.ReadLine();  // read user entry
+                return s;
             }
-            return i;
-        }
 
-        public static int getInt(String prompt, int min, int max)
-        {
-            int i = 0;
-            bool isValid = false;
-            while (!isValid)
+            public static int getInt(String prompt)
             {
-                i = getInt(prompt);
-               try 
+                int i = 0;
+                bool isValid = false;
+                while (!isValid)
                 {
-                    int32.Parse(Console.ReadLine());
-                    isValid = true;
-                    Console.WriteLine("Error! Number must be greater than " + min + ".");
+                    Console.Write(prompt);
+                    try
+                    {
+                        i = Int32.Parse(Console.ReadLine());
+                        isValid = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error! Invalid integer. Try again.");
+                    }
                 }
-                else if (i >= max)
-                {
-                    Console.WriteLine ("Error! Number must be less than " + max + ".");
-                }
-                else
-                {
-                    isValid = true;
-                }
+                return i;
             }
-            return i;
-        }
 
-        public static double getDouble(String prompt)
-        {
-            double d = 0;
-            bool isValid = false;
-            while (!isValid)
+            public static int getInt(String prompt, int min, int max)
             {
-                Console.Write(prompt);
-                if (sc.hasNextDouble())
+                int i = 0;
+                bool isValid = false;
+                while (!isValid)
                 {
-                    d = sc.nextDouble();
-                    isValid = true;
+                    i = getInt(prompt);
+                    if (i <= min)
+                    {
+                        Console.WriteLine(
+                                "Error! Number must be greater than " + min + ".");
+                    }
+                    else if (i >= max)
+                    {
+                        Console.WriteLine(
+                                "Error! Number must be less than " + max + ".");
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
                 }
-                else
-                {
-                    System.out.println("Error! Invalid decimal value. Try again.");
-                }
-                sc.nextLine();  // discard any other data entered on the line
+                return i;
             }
-            return d;
-        }
 
-        public static double getDouble(String prompt, double min, double max)
-        {
-            double d = 0;
-            boolean isValid = false;
-            while (!isValid)
+            public static double getDouble(String prompt)
             {
-                d = getDouble(prompt);
-                if (d <= min)
+                double d = 0;
+                bool isValid = false;
+                while (!isValid)
                 {
-                    System.out.println(
-                            "Error! Number must be greater than " + min + ".");
+                    Console.Write(prompt);
+                    try
+                    {
+                        d = Double.Parse(Console.ReadLine());
+                        isValid = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error! Invalid number. Try again.");
+                    }
                 }
-                else if (d >= max)
-                {
-                    System.out.println(
-                            "Error! Number must be less than " + max + ".");
-                }
-                else
-                {
-                    isValid = true;
-                }
+                return d;
             }
-            return d;
+
+            public static double getDouble(String prompt, double min, double max)
+            {
+                double d = 0;
+                bool isValid = false;
+                while (!isValid)
+                {
+                    d = getDouble(prompt);
+                    if (d <= min)
+                    {
+                        Console.WriteLine(
+                                "Error! Number must be greater than " + min + ".");
+                    }
+                    else if (d >= max)
+                    {
+                        Console.WriteLine(
+                                "Error! Number must be less than " + max + ".");
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
+                }
+                return d;
+            }
+
+
         }
     }
-}
